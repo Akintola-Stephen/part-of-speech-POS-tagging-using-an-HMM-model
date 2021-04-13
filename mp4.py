@@ -3,12 +3,12 @@
 
 import argparse
 import sys
-import baseline
-import viterbi_1, viterbi_2, viterbi_ec
-from baseline import baseline
-from viterbi_1 import viterbi_1
-from viterbi_2 import viterbi_2
-from viterbi_ec import viterbi_ec
+
+from CODE import baseline
+from CODE import viterbi_1
+from CODE import viterbi_2
+from CODE import viterbi_ec 
+from CODE import viterbi_ec
 
 import utils
 
