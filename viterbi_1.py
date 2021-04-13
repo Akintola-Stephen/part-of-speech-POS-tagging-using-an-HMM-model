@@ -1,12 +1,20 @@
 # mp4.py
 # ---------------
 import numpy as np
+import nltk
 
 """
 Part 2: This is the simplest version of viterbi that doesn't do anything special for unseen words
 but it should do better than the baseline at words with multiple tags (because now you're using context
 to predict the tag).
 """
+
+
+
+train_tagged_words = [ tup for sent in train_set for tup in sent ]
+test_tagged_words = [ tup for sent in test_set for tup in sent ]
+print(len(train_tagged_words))
+print(len(test_tagged_words))
 
 def word_given_tag(word, tag, train_bag = train_tagged_words):
     tag_list = [pair for pair in train_bag if pair[1]==tag]
