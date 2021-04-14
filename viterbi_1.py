@@ -56,7 +56,7 @@ def viterbi_1(train, test):
     state = []
     T = list(set([pair[1] for pair in test]))
      
-    for key, train in enumerate(words):
+    for key, word in enumerate(train):
         #initialise list of probability column for a given observation
         p = [] 
         for tag in T:
@@ -75,3 +75,6 @@ def viterbi_1(train, test):
         state_max = T[p.index(pmax)] 
         state.append(state_max)
     return list(zip(words, state))
+
+
+
