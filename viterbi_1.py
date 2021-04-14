@@ -56,7 +56,7 @@ def viterbi_1(train, test):
     state = []
     T = list(set([pair[1] for pair in test]))
      
-    for key, word in enumerate(train):
+    for key, train in enumerate(words):
         #initialise list of probability column for a given observation
         p = [] 
         for tag in T:
@@ -66,7 +66,7 @@ def viterbi_1(train, test):
                 transition_p = tags_df.loc[state[-1], tag]
                  
             # compute emission and state probabilities
-            emission_p = word_given_tag(train[key], tag)[0]/word_given_tag(train[key], tag)[1]
+            emission_p = word_given_tag(words[key], tag)[0]/word_given_tag(words[key], tag)[1]
             state_probability = emission_p * transition_p    
             p.append(state_probability)
              
@@ -74,4 +74,4 @@ def viterbi_1(train, test):
         # getting state for which probability is maximum
         state_max = T[p.index(pmax)] 
         state.append(state_max)
-    return []
+    return list(zip(words, state))
