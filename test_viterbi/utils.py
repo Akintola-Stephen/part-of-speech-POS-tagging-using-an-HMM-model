@@ -2,21 +2,21 @@ from csv import reader
 smoothing_constant = 1e-10
 def read_files():
     test = []
-    with open('test.txt','r') as f:
+    with open('test_viterbi/test.txt','r') as f:
         l = f.read()
         test.append(l.split())
     
-    with open('output.txt','r') as f:
+    with open('test_viterbi/output.txt','r') as f:
         output = f.read()
 
     emission = []
-    with open('emission.txt','r') as f:
+    with open('test_viterbi/emission.txt','r') as f:
         c = reader(f)
         for line in c:
             emission.append([line[0],line[1],float(line[2])])
     
     transition = []
-    with open('transition.txt','r') as f:
+    with open('test_viterbi/transition.txt','r') as f:
         c = reader(f)
         for line in c:
             transition.append([line[0],line[1],float(line[2])])
@@ -44,5 +44,6 @@ def get_nested_dictionaries(emission, transition):
 
 
 
-print(read_files())
+#print(get_nested_dictionaries('test_viterbi/emission.txt', 'test_viterbi/transition.txt'))
 
+print(read_files())

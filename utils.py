@@ -138,3 +138,13 @@ def get_word_tag_statistics(data_set):
             word_tags[word].add(tag)
             word_set.add(word)
     return word_set, set(map(lambda elem: elem[0], filter(lambda elem: len(elem[1]) > 1, word_tags.items())))
+
+
+
+
+
+# senten = ['Ade is a boy, He loves fighting so much !']
+# print(strip_tags(senten))
+
+
+print(load_dataset('test_viterbi/emission.txt'))
