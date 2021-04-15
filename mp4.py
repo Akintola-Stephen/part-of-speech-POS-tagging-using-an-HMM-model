@@ -4,11 +4,8 @@
 import argparse
 import sys
 
-from CODE import baseline
-from CODE import viterbi_1
-from CODE import viterbi_2
-from CODE import viterbi_ec 
-from CODE import viterbi_ec
+from ..CODE import viterbi_1, viterbi_2, viterbi_ec, baseline
+
 
 import utils
 
